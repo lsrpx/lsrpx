@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Sahoo - Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .rotate-on-hover {
+            transition: transform 0.5s ease;
+        }
+        
+        .rotate-on-hover:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+        
+        .text-stroke {
+            -webkit-text-stroke: 2px black;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .card-flip {
+            perspective: 1000px;
+        }
+        
+        .card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .card-flip:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            backface-visibility: hidden;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+    
+    <!-- Header -->
+    <header class="w-full bg-white border-b border-black">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">LS</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#hero" class="hover:bg-black hover:text-white px-4 py-2 transition-all duration-300">HOME</a>
+                    <a href="#about" class="hover:bg-black hover:text-white px-4 py-2 transition-all duration-300">ABOUT</a>
+                    <a href="#work" class="hover:bg-black hover:text-white px-4 py-2 transition-all duration-300">WORK</a>
+                    <a href="#skills" class="hover:bg-black hover:text-white px-4 py-2 transition-all duration-300">SKILLS</a>
+                    <a href="#contact" class="hover:bg-black hover:text-white px-4 py-2 transition-all duration-300">CONTACT</a>
+                </nav>
+                <button id="menu-toggle" class="md:hidden">
+                    <div class="w-6 h-0.5 bg-black mb-1"></div>
+                    <div class="w-6 h-0.5 bg-black mb-1"></div>
+                    <div class="w-6 h-0.5 bg-black"></div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black text-white z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+            <a href="#hero" class="mobile-link">HOME</a>
+            <a href="#about" class="mobile-link">ABOUT</a>
+            <a href="#work" class="mobile-link">WORK</a>
+            <a href="#skills" class="mobile-link">SKILLS</a>
+            <a href="#contact" class="mobile-link">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center grid-pattern relative overflow-hidden">
+        <div class="text-center z-10">
+            <div class="relative mb-12">
+                <div class="w-32 h-32 bg-black rounded-full mx-auto mb-8 relative">
+                    <div class="absolute inset-0 bg-black rounded-full pulse-ring"></div>
+                    <div class="relative w-full h-full bg-black rounded-full flex items-center justify-center">
+                        <span class="text-4xl font-bold text-white">LS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-8xl md:text-9xl font-bold mb-4">
+                <span class="block">LUCKY</span>
+                <span class="block text-stroke">SAHOO</span>
+            </h1>
+            
+            <div class="text-2xl md:text-3xl font-medium mb-8 tracking-wider">
+                ELECTRICAL MAINTENANCE ENGINEER
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 mb-12">
+                <div class="text-center">
+                    <div class="text-4xl font-bold">04+</div>
+                    <div class="text-sm uppercase tracking-widest">YEARS</div>
+                </div>
+                <div class="hidden md:block w-px h-16 bg-black"></div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">?40L</div>
+                    <div class="text-sm uppercase tracking-widest">SAVED</div>
+                </div>
+                <div class="hidden md:block w-px h-16 bg-black"></div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">MBA</div>
+                    <div class="text-sm uppercase tracking-widest">PURSUING</div>
+                </div>
+            </div>
+            
+            <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-black text-white px-12 py-4 text-lg font-medium hover:bg-white hover:text-black border-2 border-black transition-all duration-300">
+                EXPLORE MY WORK
+            </button>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 floating">
+            <div class="w-4 h-4 bg-black rounded-full"></div>
+        </div>
+        <div class="absolute top-40 right-20 floating" style="animation-delay: -2s;">
+            <div class="w-6 h-6 border-2 border-black"></div>
+        </div>
+        <div class="absolute bottom-32 left-20 floating" style="animation-delay: -4s;">
+            <div class="w-8 h-8 bg-black transform rotate-45"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="slide-up">
+                    <h2 class="text-6xl md:text-7xl font-bold mb-8">ABOUT</h2>
+                    <div class="space-y-6 text-lg">
+                        <p>Currently pursuing MBA in Operations & Data Science from NMIMS, I blend technical expertise with strategic business thinking.</p>
+                        <p>At Karamtara Engineering Ltd, I lead maintenance operations in steel manufacturing, focusing on preventive maintenance, safety compliance, and cost optimization.</p>
+                        <p>My passion lies in sustainable engineering solutions and driving process improvements through innovative maintenance strategies.</p>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-2 gap-8">
+                        <div class="border-l-4 border-white pl-6">
+                            <h3 class="text-xl font-bold mb-2">CURRENT</h3>
+                            <p>Maintenance Engineer</p>
+                            <p class="text-gray-300">Karamtara Engineering</p>
+                        </div>
+                        <div class="border-l-4 border-white pl-6">
+                            <h3 class="text-xl font-bold mb-2">PREVIOUS</h3>
+                            <p>Assistant Engineer</p>
+                            <p class="text-gray-300">Viraj Profiles Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-up">
+                    <div class="bg-white text-black p-12 rotate-on-hover">
+                        <h3 class="text-3xl font-bold mb-8">EXPERTISE</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">?</div>
+                                <div>
+                                    <h4 class="font-bold">Power Systems</h4>
+                                    <p class="text-gray-600">Optimization & Maintenance</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">??</div>
+                                <div>
+                                    <h4 class="font-bold">TPM & 5S</h4>
+                                    <p class="text-gray-600">Process Improvement</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold">??</div>
+                                <div>
+                                    <h4 class="font-bold">Leadership</h4>
+                                    <p class="text-gray-600">Team & Shift Management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-7xl font-bold text-center mb-16">PROJECTS</h2>
+            
+            <!-- Featured Project -->
+            <div class="mb-16">
+                <div class="bg-black text-white p-12 md:p-16 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                            <div class="lg:w-2/3 mb-8 lg:mb-0">
+                                <span class="text-sm uppercase tracking-widest text-gray-300 mb-4 block">FEATURED PROJECT</span>
+                                <h3 class="text-4xl md:text-5xl font-bold mb-6">Energy Saving Initiative</h3>
+                                <p class="text-xl mb-8 text-gray-300 max-w-2xl">
+                                    Implemented VFD technology in 3-phase man cooler fan system, reducing operational frequency by 10 Hz and achieving substantial cost savings.
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="bg-white text-black px-4 py-2 text-sm font-medium">VFD Implementation</span>
+                                    <span class="bg-white text-black px-4 py-2 text-sm font-medium">Energy Optimization</span>
+                                    <span class="bg-white text-black px-4 py-2 text-sm font-medium">Cost Reduction</span>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/3 text-center lg:text-right">
+                                <div class="text-6xl md:text-8xl font-bold mb-2">?40L</div>
+                                <div class="text-xl text-gray-300">Annual Savings</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
+                </div>
+            </div>
+            
+            <!-- Other Projects -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-flip">
+                    <div class="card-inner relative w-full h-80">
+                        <div class="card-front absolute inset-0 bg-white border-4 border-black p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Maintenance Optimization</h3>
+                            <p class="text-gray-700">Preventive maintenance scheduling improvements</p>
+                            <div class="mt-6">
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded-full">Hover to learn more</span>
+                            </div>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-black text-white p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Maintenance Optimization</h3>
+                            <p class="mb-4">Redesigned preventive maintenance schedules, reducing unplanned breakdowns by 35% and improving overall equipment effectiveness.</p>
+                            <div class="space-y-2">
+                                <div class="text-sm">• Reduced downtime</div>
+                                <div class="text-sm">• Improved scheduling</div>
+                                <div class="text-sm">• Enhanced efficiency</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-flip">
+                    <div class="card-inner relative w-full h-80">
+                        <div class="card-front absolute inset-0 bg-black text-white p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Operations Leadership</h3>
+                            <p class="text-gray-300">Multi-shift operations management</p>
+                            <div class="mt-6">
+                                <span class="text-sm bg-white text-black px-3 py-1 rounded-full">Hover to learn more</span>
+                            </div>
+                        </div>
+                        <div class="card-back absolute inset-0 bg-white text-black p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Operations Leadership</h3>
+                            <p class="mb-4">Successfully managed multiple shift operations ensuring 99.5% plant uptime while leading teams of electricians and fitters.</p>
+                            <div class="space-y-2">
+                                <div class="text-sm">• Team leadership</div>
+                                <div class="text-sm">• Continuous operations</div>
+                                <div class="text-sm">• Safety compliance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-7xl font-bold text-center mb-16">SKILLS</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 text-center rotate-on-hover border-4 border-transparent hover:border-black transition-all duration-300">
+                    <div class="text-4xl mb-4">?</div>
+                    <h3 class="text-xl font-bold mb-2">Electrical Systems</h3>
+                    <p class="text-gray-600 text-sm">Maintenance & Troubleshooting</p>
+                </div>
+                
+                <div class="bg-black text-white p-8 text-center rotate-on-hover">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">Preventive Maintenance</h3>
+                    <p class="text-gray-300 text-sm">TPM & 5S Implementation</p>
+                </div>
+                
+                <div class="bg-white p-8 text-center rotate-on-hover border-4 border-transparent hover:border-black transition-all duration-300">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">Team Leadership</h3>
+                    <p class="text-gray-600 text-sm">Shift & Manpower Management</p>
+                </div>
+                
+                <div class="bg-black text-white p-8 text-center rotate-on-hover">
+                    <div class="text-4xl mb-4">???</div>
+                    <h3 class="text-xl font-bold mb-2">Safety Standards</h3>
+                    <p class="text-gray-300 text-sm">Compliance & Risk Management</p>
+                </div>
+                
+                <div class="bg-black text-white p-8 text-center rotate-on-hover">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">SAP EHS</h3>
+                    <p class="text-gray-300 text-sm">Environment, Health & Safety</p>
+                </div>
+                
+                <div class="bg-white p-8 text-center rotate-on-hover border-4 border-transparent hover:border-black transition-all duration-300">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">Business Management</h3>
+                    <p class="text-gray-600 text-sm">Operations & Data Science</p>
+                </div>
+                
+                <div class="bg-white p-8 text-center rotate-on-hover border-4 border-transparent hover:border-black transition-all duration-300">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                    <p class="text-gray-600 text-sm">Cost-saving Solutions</p>
+                </div>
+                
+                <div class="bg-black text-white p-8 text-center rotate-on-hover">
+                    <div class="text-4xl mb-4">??</div>
+                    <h3 class="text-xl font-bold mb-2">Process Optimization</h3>
+                    <p class="text-gray-300 text-sm">Continuous Improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-6xl md:text-7xl font-bold mb-8">LET'S CONNECT</h2>
+            <p class="text-2xl mb-16 max-w-3xl mx-auto">
+                Ready to discuss opportunities in electrical maintenance, operations management, or industrial optimization.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                <a href="mailto:czylsr@gmail.com" class="bg-white text-black p-12 hover:bg-gray-100 transition-colors group">
+                    <div class="text-6xl mb-6 group-hover:scale-110 transition-transform">??</div>
+                    <h3 class="text-2xl font-bold mb-4">EMAIL</h3>
+                    <p class="text-xl">czylsr@gmail.com</p>
+                </a>
+                
+                <a href="https://linkedin.com/in/luckysahoo" target="_blank" class="border-4 border-white p-12 hover:bg-white hover:text-black transition-colors group">
+                    <div class="text-6xl mb-6 group-hover:scale-110 transition-transform">??</div>
+                    <h3 class="text-2xl font-bold mb-4">LINKEDIN</h3>
+                    <p class="text-xl">linkedin.com/in/luckysahoo</p>
+                </a>
+            </div>
+            
+            <!-- Education -->
+            <div class="bg-white/10 p-12 rounded-2xl">
+                <h3 class="text-3xl font-bold mb-8">EDUCATION</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold mb-2">MBA (Ongoing)</div>
+                        <p class="text-gray-300">Operations & Data Science</p>
+                        <p class="text-sm text-gray-400">NMIMS</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold mb-2">B.E. Electrical</div>
+                        <p class="text-gray-300">Electrical Engineering</p>
+                        <p class="text-sm text-gray-400">University of Mumbai</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold mb-2">Diploma</div>
+                        <p class="text-gray-300">Electrical Engineering</p>
+                        <p class="text-sm text-gray-400">Katgara Polytechnic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 px-6 border-t border-black">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-600">© 2024 Lucky Sahoo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Mobile menu links
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.slide-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97037bb383fa41b6',t:'MTc1NTM3NDA2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
